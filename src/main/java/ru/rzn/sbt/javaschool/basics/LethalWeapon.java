@@ -7,17 +7,15 @@ public class LethalWeapon {
     private int roundsLeft;
     private double power;
 
-    private long nextSerial = 0;
-    private final long serial = 2L;
-
-
-    public LethalWeapon (){
-    }
+    private static long nextSerial = 0;
+    private final long serial;
 
     public LethalWeapon (String color, Double power, int roundsLeft) {
         this.color = color;
         this.power = power;
         this.roundsLeft = roundsLeft;
+        nextSerial ++;
+        serial = nextSerial;
     }
 
     public void setPower (double power) {
